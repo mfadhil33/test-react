@@ -1,7 +1,20 @@
 import React, { Component, Fragment } from "react";
-
+import CardProduct from "../CardProduct/CardProduct";
+import './Product.css';
 
 class Product extends Component{
+
+    state = {
+      order: 4,
+      name: 'padhil'
+    }
+
+    handleCounterChange = (newValue) => {
+    
+      this.setState({
+      order: newValue
+    })
+    }
 
    render() {
 
@@ -9,28 +22,18 @@ class Product extends Component{
         <Fragment>
         <div className="header">
             <div className="logo">
-                <img src="" alt=""></img>
+                <img src= "pngegg.png"alt="" height="50" width="50"></img>
             </div>
             <div className="troley">
-            <img src="" alt=""></img>
-            <div className="count">3</div>
+            <img src="https://etanee.id/img/icon/ic_cart_white.svg" alt=""></img>
+            <div className="count">{this.state.order}</div>
             </div>
-               <div className="card">
-            <div className="img-thumb-prod">
-                <img src="" alt=""></img>
-            </div>
-            <p className="product-title">Rendang</p>
-            <p className="product-price">Rp. 10.000</p>
-            <p className="counter">
-                <button className="minus">-</button>
-                <input type="text" value={3}></input>
-                <button className="plus">+</button>
-            </p>
         </div>
+        <CardProduct onCounterChange={(value) => this.handleCounterChange(value)}  />
         </Fragment>
  
         
-        )
+        );
 }
 }
 

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import YoutubeComp from "../../component/YoutubeComp/YouTubeComp";
+// import YoutubeComp from "../../component/YoutubeComp/YouTubeComp";
+import Product from "../Product/Product";
 
 class Home extends Component{
 
@@ -7,12 +8,18 @@ class Home extends Component{
 
     return (
          <div>
-            <p>Youtube Component</p>
+            {/* <p>Youtube Component</p>
             <hr />
-             <YoutubeComp time="7.12" title="Learn languange programing Rust" desc="...."/>
+             {/* <YoutubeComp time="7.12" title="Learn languange programing Rust" desc="...."/>
              <YoutubeComp time="2.12" title="learn JS basic" desc="hmmm"/>
              <YoutubeComp time="7.00"  title="Learn ReactJs" desc="no click bait" />
-             <YoutubeComp />
+             <YoutubeComp /> */}
+             <Product /> */}
+
+             <p>Life Cycle Component</p>
+
+             
+
          </div>
         )
 }

@@ -5,12 +5,13 @@ import HelloComponent from './component/HelloComponent';
 // import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Home from './container/Home/Home';
+import Product from './container/Product/Product';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <React.StrictMode>
-    <Home />
+    <Product />
   </React.StrictMode>
 );
 
