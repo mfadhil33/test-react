@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import LifeCycleComp from "../LifeCycleComp/LifeCycleComp";
 // import YoutubeComp from "../../component/YoutubeComp/YouTubeComp";
 import Product from "../Product/Product";
 
@@ -14,10 +15,9 @@ class Home extends Component{
              <YoutubeComp time="2.12" title="learn JS basic" desc="hmmm"/>
              <YoutubeComp time="7.00"  title="Learn ReactJs" desc="no click bait" />
              <YoutubeComp /> */}
-             <Product /> */}
 
              <p>Life Cycle Component</p>
-
+            <LifeCycleComp />
              
 
          </div>
