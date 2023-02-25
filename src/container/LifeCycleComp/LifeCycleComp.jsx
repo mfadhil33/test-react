@@ -1,6 +1,6 @@
 // import { render } from "@testing-library/react";
 import React, {Component} from "react";
-// import './LifeCycleComp.scss';
+import './LifeCycleComp.scss';
 
 class LifeCycleComp extends Component {
 
@@ -19,24 +19,32 @@ class LifeCycleComp extends Component {
     componentDidMount() {
     
         console.log("componentDidMount");
-        setTimeout(() => {
-           this.setState({
-             count: 2,
-           });
+        // setTimeout(() => {
+        //    this.setState({
+        //      count: 2,
+        //    });
         
-        }, 3000)
+        // }, 5000)
      
     }
 
     shouldComponentUpdate(nextProps, nextState) {
     
-         console.log('shouldComponentUpdate');
+         console.group('shouldComponentUpdate');
+         console.log(' next props',nextProps);
+         console.log('next state', nextState);
+         console.log('this state', this.state)
+         console.groupEnd();
+         if(nextState.count >= 4){
+          return false;
+        }
          return true;
     }
 
     getSnapshotBeforeUpdate(prevProps, prevState) {
     
         console.log("getsnapshotBeforeUpdate");
+        return null;
     
     }
 
@@ -51,10 +59,16 @@ class LifeCycleComp extends Component {
             console.log("componentWillUnMount");
       
     }
+    changeCount = () => {
+    
+      this.setState({
+      count: this.state.count + 1
+      });
+    }
 
       render() {
          console.log('render');
-         return <button className="btn">Component Button{this.state.count}</button>;
+         return <button className="btn" onClick={this.changeCount}>Component Button{this.state.count}</button>;
     }
 
 
